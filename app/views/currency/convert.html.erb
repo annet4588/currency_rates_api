@@ -1,0 +1,15 @@
+<div class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+  <div class="card p-4 shadow-lg" style="min-width: 400px;">
+    <h1 class="text-center mb-4">Currency Result</h1>
+
+      <p class="mb-3">  
+         <%= params[:amount] %> <%= params[:base_currency] %> =
+         <strong><%= @converted_amount %> <%= params[:target_currency] %></strong>
+      </p>
+
+      <p class="mb-3">Exchange Rate: 1 <%= params[:base_currency] %> = <%= @rate %> <%= params[:target_currency] %></p>
+
+      <%= link_to "Convert Again", root_path %>
+
+   </div>
+</div>

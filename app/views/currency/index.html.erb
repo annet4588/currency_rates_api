@@ -1,0 +1,33 @@
+<div class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+  <div class="card p-4 shadow-lg" style="min-width: 400px;">
+
+  <% if flash[:error] %>
+    <div class="alert alert-danger text-center">
+      <%= flash[:error] %>
+    </div>
+  <% end %>
+
+    <h1 class="text-center mb-4">Currency Exchange</h1>
+
+    <%= form_with url: convert_path, method: :get, local: true do %>
+      <div class="mb-3">
+        <label class="form-label">Base Currency (e.g. USD):</label>
+        <%= text_field_tag :base_currency, "USD", class: "form-control" %>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Target Currency (e.g. EUR):</label>
+        <%= text_field_tag :target_currency, "EUR", class: "form-control" %>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Amount:</label>
+        <%= number_field_tag :amount, 1, class: "form-control" %>
+      </div>
+
+      <div class="d-grid">
+        <%= submit_tag "Convert", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>
